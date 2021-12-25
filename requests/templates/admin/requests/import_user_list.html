@@ -1,0 +1,17 @@
+{% extends 'admin/change_form.html' %}
+
+{% block submit_buttons_bottom %}
+    {% if adminform.form.instance.status == 0 %} {# pending #}
+        <div class="submit-row">
+            <input type="submit" value="Process" name="process" style="background: #8e862b">
+        </div>
+    {% endif %}
+    {{ block.super }}
+
+{% endblock %}
+
+{#            <input type="submit" value="Accept" name="accept" style="background: #116150">#}
+{##}
+{#            <input type="submit" value="Reject" name="reject" style="background: #ba2122">#}
+{##}
+{#            <input type="submit" value="Report" name="report" style="background: #1843e0">#}
